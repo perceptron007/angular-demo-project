@@ -1,3 +1,50 @@
-<p>
-  janitor-check-in-editor works!
-</p>
+<form class="form" [formGroup]="form">
+
+
+
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Train Number" formControlName="trainNo" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Departure Date" formControlName="deptDate" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Departure Time" formControlName="deptTime" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Arrival Date" formControlName="arrDate" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Arrival Time" formControlName="arrTime" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="No. of Res Coach" formControlName="resCoachNo" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="No. of Janitors" formControlName="janitorNo" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Contractor Name" formControlName="contractorName" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="remark" formControlName="remark" required>
+  </mat-form-field>
+
+
+
+
+  <div class="actions-wrapper">
+
+    <div class="form-field">
+      <mat-slide-toggle formControlName="enabled">Enable</mat-slide-toggle>
+    </div>
+
+    <div class="action-buttons">
+      <button class="btn" mat-raised-button color="primary" [disabled]="form.invalid" (click)="onSaveMasterTrainData()">
+        {{editMode? 'Update' : 'Create'}}</button>
+      <button class="btn" mat-raised-button color="warn" *ngIf="editMode" [disabled]="form.invalid" (click)="onDeleteMasterTrainData()">Delete</button>
+      <button class="btn" mat-raised-button routerLink="/panel/setup/lookup-value">Cancel</button>
+    </div>
+  </div>
+
+</form>

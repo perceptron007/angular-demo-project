@@ -1,3 +1,50 @@
-<p>
-  janitor-register-editor works!
-</p>
+<form class="form" [formGroup]="form">
+
+
+
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Name" formControlName="name" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Contact" formControlName="contactNo" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="dob" formControlName="dob" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Aadhar Number" formControlName="aadhaarNumber" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Qualification" formControlName="qualification" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Designation" formControlName="designation" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Contractor" formControlName="contractor" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Select Photo" formControlName="photo" required>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <input matInput placeholder="remark" formControlName="remark" required>
+  </mat-form-field>
+
+
+
+
+  <div class="actions-wrapper">
+
+    <div class="form-field">
+      <mat-slide-toggle formControlName="enabled">Enable</mat-slide-toggle>
+    </div>
+
+    <div class="action-buttons">
+      <button class="btn" mat-raised-button color="primary" [disabled]="form.invalid" (click)="onSaveJanitor()">
+        {{editMode? 'Update' : 'Create'}}</button>
+      <button class="btn" mat-raised-button color="warn" *ngIf="editMode" [disabled]="form.invalid" (click)="onDeleteJanitor()">Delete</button>
+      <button class="btn" mat-raised-button routerLink="/panel/setup/lookup-value">Cancel</button>
+    </div>
+  </div>
+
+</form>
