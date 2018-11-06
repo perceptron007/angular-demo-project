@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Routes } from '@angular/router';
-import { DashboardContainerComponent } from './dashboard/container/dashboard-container/dashboard-container.component';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes : Routes = [
-  { path: '', component: DashboardContainerComponent
+  {
+    path: '',
+    loadChildren: './dashboard/dashboard.module#DashboardModule'
   }
 ];
 
 
 @NgModule({
   declarations: [],
-  imports: [ CommonModule ],
+  imports: [ RouterModule.forChild(routes)],
   exports: [],
   providers: [],
 })

@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { HomeModule } from './module/home/home.module';
 import { RootModule } from 'src/lib/core';
+import { SharedModule } from 'src/lib/shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    HomeModule,
+    SharedModule,
     RootModule,
     AppRoutingModule,
     LayoutModule,
